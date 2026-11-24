@@ -1,0 +1,1179 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>混剪抖音风_原创短视频社区_高清正版内容生态</title>
+<meta name="description" content="混剪抖音风官方网站，专注原创混剪短视频的内容社区与创作平台，汇聚高清正版精品内容与优质创作者，打造值得信赖的短视频内容生态。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23141414'/%3E%3Cpath d='M20 44 L20 20 L34 20 Q44 20 44 30 Q44 36 38 38 L46 44 L38 44 L32 39 L27 39 L27 44 Z M27 27 L27 33 L34 33 Q37 33 37 30 Q37 27 34 27 Z' fill='%23FE2C55'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --hdj-bg:#0e0e10;
+    --hdj-panel:#17171b;
+    --hdj-panel-2:#1e1e24;
+    --hdj-line:#2b2b33;
+    --hdj-text:#f2f2f5;
+    --hdj-muted:#9c9caa;
+    --hdj-accent:#fe2c55;
+    --hdj-cyan:#25f4ee;
+    --hdj-gold:#ffd23f;
+    --hdj-radius:14px;
+    --hdj-max:1200px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--hdj-bg);
+    color:var(--hdj-text);
+    font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",system-ui,-apple-system,sans-serif;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;}
+  .hdj-wrap{max-width:var(--hdj-max);margin:0 auto;padding:0 22px;}
+  .hdj-sticky{position:sticky;top:0;z-index:60;}
+
+  /* 公告条 */
+  .hdj-announce{
+    background:linear-gradient(90deg,var(--hdj-accent),#ff6b3d 55%,var(--hdj-gold));
+    color:#160a0c;
+    font-size:13px;
+    font-weight:600;
+    letter-spacing:.2px;
+  }
+  .hdj-announce-inner{
+    max-width:var(--hdj-max);margin:0 auto;padding:8px 22px;
+    display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  }
+  .hdj-announce-tag{
+    background:#160a0c;color:var(--hdj-gold);
+    font-size:11px;padding:2px 8px;border-radius:999px;letter-spacing:1px;flex:none;
+  }
+  .hdj-announce-list{display:flex;gap:18px;flex-wrap:wrap;overflow:hidden;}
+  .hdj-announce-list span{white-space:nowrap;opacity:.92;}
+  .hdj-announce-btn{
+    margin-left:auto;flex:none;border:1px solid rgba(0,0,0,.35);
+    background:rgba(0,0,0,.14);color:#160a0c;border-radius:999px;
+    font-size:12px;padding:3px 12px;
+  }
+
+  /* 页头 */
+  .hdj-header{
+    background:rgba(14,14,16,.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--hdj-line);
+  }
+  .hdj-header-inner{
+    max-width:var(--hdj-max);margin:0 auto;padding:12px 22px;
+    display:flex;align-items:center;gap:18px;
+  }
+  .hdj-logo{display:flex;align-items:center;gap:10px;flex:none;}
+  .hdj-logo-mark{
+    width:38px;height:38px;border-radius:11px;flex:none;
+    background:conic-gradient(from 200deg,var(--hdj-accent),var(--hdj-gold),var(--hdj-cyan),var(--hdj-accent));
+    display:grid;place-items:center;
+  }
+  .hdj-logo-mark span{
+    width:30px;height:30px;border-radius:8px;background:#0e0e10;
+    color:var(--hdj-accent);font-weight:800;font-size:16px;display:grid;place-items:center;
+  }
+  .hdj-logo-text b{font-size:18px;letter-spacing:.5px;display:block;line-height:1.2;}
+  .hdj-logo-text small{font-size:11px;color:var(--hdj-muted);letter-spacing:2px;}
+  .hdj-nav{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px;}
+  .hdj-nav a{
+    font-size:14px;color:#d5d5e0;padding:6px 11px;border-radius:8px;transition:.18s;
+  }
+  .hdj-nav a:hover{background:var(--hdj-panel-2);color:#fff;}
+  .hdj-head-tools{margin-left:auto;display:flex;align-items:center;gap:10px;flex:none;}
+  .hdj-search{
+    display:flex;align-items:center;gap:6px;background:var(--hdj-panel-2);
+    border:1px solid var(--hdj-line);border-radius:999px;padding:5px 6px 5px 14px;
+  }
+  .hdj-search input{
+    background:transparent;border:0;outline:0;color:var(--hdj-text);
+    font-size:13px;width:150px;
+  }
+  .hdj-search input::placeholder{color:#6f6f7e;}
+  .hdj-search button{
+    border:0;border-radius:999px;background:var(--hdj-accent);color:#fff;
+    font-size:12px;padding:5px 12px;font-weight:600;
+  }
+  .hdj-menu-toggle{
+    display:none;border:1px solid var(--hdj-line);background:var(--hdj-panel-2);
+    color:var(--hdj-text);border-radius:9px;width:38px;height:38px;font-size:16px;
+  }
+  .hdj-search-feedback{
+    max-width:var(--hdj-max);margin:0 auto;padding:0 22px;
+    font-size:12.5px;color:var(--hdj-cyan);min-height:0;transition:.2s;
+  }
+  .hdj-search-feedback.hdj-active{padding-bottom:8px;}
+
+  /* 首屏 6:4 左文右图 */
+  .hdj-hero{padding:46px 0 30px;position:relative;overflow:hidden;}
+  .hdj-hero::before{
+    content:"";position:absolute;inset:-40% 40% 40% -20%;
+    background:radial-gradient(circle at 40% 40%,rgba(254,44,85,.18),transparent 62%);
+    pointer-events:none;
+  }
+  .hdj-hero-grid{
+    display:grid;grid-template-columns:6fr 4fr;gap:38px;align-items:center;
+    position:relative;
+  }
+  .hdj-badge-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;}
+  .hdj-chip{
+    font-size:11.5px;letter-spacing:1px;padding:4px 11px;border-radius:999px;
+    border:1px solid var(--hdj-line);color:var(--hdj-muted);background:var(--hdj-panel);
+  }
+  .hdj-chip.hdj-chip-hot{border-color:rgba(254,44,85,.55);color:#ff7f97;background:rgba(254,44,85,.1);}
+  .hdj-hero h1{
+    font-size:clamp(34px,4.6vw,58px);line-height:1.1;margin:0 0 6px;
+    letter-spacing:1px;font-weight:900;
+  }
+  .hdj-hero h1 em{
+    font-style:normal;
+    background:linear-gradient(92deg,var(--hdj-accent),var(--hdj-gold) 60%,var(--hdj-cyan));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hdj-hero-sub{font-size:16.5px;color:#c8c8d4;margin:14px 0 0;max-width:56ch;}
+  .hdj-hero-lead{font-size:14px;color:var(--hdj-muted);margin:14px 0 0;max-width:60ch;}
+  .hdj-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+  .hdj-btn{
+    border:0;border-radius:11px;padding:12px 22px;font-size:14.5px;font-weight:700;
+    display:inline-flex;align-items:center;gap:7px;transition:.18s;
+  }
+  .hdj-btn-primary{background:var(--hdj-accent);color:#fff;box-shadow:0 8px 24px rgba(254,44,85,.28);}
+  .hdj-btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(254,44,85,.4);}
+  .hdj-btn-ghost{background:var(--hdj-panel-2);color:var(--hdj-text);border:1px solid var(--hdj-line);}
+  .hdj-btn-ghost:hover{border-color:var(--hdj-cyan);color:var(--hdj-cyan);}
+  .hdj-stats{
+    display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:30px;
+  }
+  .hdj-stat{
+    background:var(--hdj-panel);border:1px solid var(--hdj-line);border-radius:12px;padding:14px 14px;
+  }
+  .hdj-stat b{font-size:22px;display:block;line-height:1.2;color:var(--hdj-gold);}
+  .hdj-stat span{font-size:12px;color:var(--hdj-muted);}
+  .hdj-hero-visual{position:relative;}
+  .hdj-hero-visual img{
+    width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:18px;
+    border:1px solid var(--hdj-line);
+  }
+  .hdj-hero-float{
+    position:absolute;left:-16px;bottom:22px;background:var(--hdj-panel-2);
+    border:1px solid var(--hdj-line);border-radius:12px;padding:10px 14px;
+    font-size:12.5px;color:#d8d8e2;display:flex;align-items:center;gap:8px;
+    box-shadow:0 14px 30px rgba(0,0,0,.45);
+  }
+  .hdj-dot-live{
+    width:8px;height:8px;border-radius:50%;background:var(--hdj-accent);
+    box-shadow:0 0 0 4px rgba(254,44,85,.18);
+  }
+
+  /* 通用 section */
+  .hdj-section{padding:52px 0;border-top:1px solid var(--hdj-line);scroll-margin-top:112px;}
+  .hdj-sec-head{margin-bottom:26px;}
+  .hdj-kicker{
+    font-size:12px;letter-spacing:3px;color:var(--hdj-accent);font-weight:700;margin:0 0 6px;
+    text-transform:uppercase;
+  }
+  .hdj-section h2{
+    font-size:clamp(22px,2.6vw,30px);margin:0 0 8px;line-height:1.28;letter-spacing:.4px;
+  }
+  .hdj-sec-desc{color:var(--hdj-muted);font-size:14px;margin:0;max-width:78ch;}
+  .hdj-section h3{font-size:17px;margin:0 0 6px;line-height:1.4;}
+
+  /* 焦点内容：一大两小 */
+  .hdj-focus-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;margin-bottom:26px;}
+  .hdj-focus-main{
+    background:var(--hdj-panel);border:1px solid var(--hdj-line);border-radius:var(--hdj-radius);
+    overflow:hidden;display:flex;flex-direction:column;transition:.2s;
+  }
+  .hdj-focus-main:hover{border-color:rgba(37,244,238,.5);transform:translateY(-3px);}
+  .hdj-focus-main img{aspect-ratio:16/9;object-fit:cover;width:100%;}
+  .hdj-focus-main .hdj-pad{padding:16px 18px 18px;}
+  .hdj-focus-side{display:grid;gap:20px;grid-template-rows:1fr 1fr;}
+  .hdj-mini{
+    background:var(--hdj-panel);border:1px solid var(--hdj-line);border-radius:var(--hdj-radius);
+    padding:16px;display:flex;flex-direction:column;gap:8px;transition:.2s;
+  }
+  .hdj-mini:hover{border-color:rgba(255,210,63,.55);transform:translateY(-2px);}
+  .hdj-mini p{margin:0;font-size:13.5px;color:var(--hdj-muted);}
+  .hdj-meta{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:#85859a;align-items:center;}
+  .hdj-tag{
+    display:inline-block;font-size:11.5px;color:var(--hdj-cyan);
+    background:rgba(37,244,238,.09);border:1px solid rgba(37,244,238,.25);
+    border-radius:999px;padding:1px 9px;margin-right:6px;margin-top:4px;
+  }
+  .hdj-tag.hdj-tag-pink{color:#ff86a0;background:rgba(254,44,85,.09);border-color:rgba(254,44,85,.28);}
+  .hdj-tag.hdj-tag-gold{color:var(--hdj-gold);background:rgba(255,210,63,.08);border-color:rgba(255,210,63,.25);}
+
+  /* 视频文字列表 */
+  .hdj-vlist{display:grid;gap:2px;border-top:1px solid var(--hdj-line);}
+  .hdj-vrow{
+    display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:16px;
+    padding:16px 6px;border-bottom:1px solid var(--hdj-line);align-items:start;transition:.16s;
+  }
+  .hdj-vrow:hover{background:var(--hdj-panel);}
+  .hdj-vrank{
+    font-size:19px;font-weight:900;color:#3d3d49;line-height:1.4;font-family:Georgia,serif;
+  }
+  .hdj-vrow:hover .hdj-vrank{color:var(--hdj-accent);}
+  .hdj-vbody p{margin:2px 0 8px;font-size:13.5px;color:var(--hdj-muted);}
+  .hdj-vops{display:flex;gap:8px;flex-wrap:wrap;align-items:center;flex:none;}
+  .hdj-action{
+    border:1px solid var(--hdj-line);background:var(--hdj-panel-2);color:#c3c3d0;
+    font-size:12px;border-radius:999px;padding:5px 12px;transition:.16s;white-space:nowrap;
+  }
+  .hdj-action:hover{border-color:var(--hdj-accent);color:#fff;}
+  .hdj-action.hdj-liked{background:rgba(254,44,85,.16);border-color:var(--hdj-accent);color:#ff7f97;}
+  .hdj-action.hdj-fav{background:rgba(255,210,63,.14);border-color:var(--hdj-gold);color:var(--hdj-gold);}
+  .hdj-action.hdj-copied{background:rgba(37,244,238,.14);border-color:var(--hdj-cyan);color:var(--hdj-cyan);}
+
+  /* 关键词解析 */
+  .hdj-parse-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:30px;}
+  .hdj-parse-text p{font-size:14.5px;color:#c5c5d2;margin:0 0 14px;}
+  .hdj-parse-text h3{margin-top:22px;color:#fff;border-left:3px solid var(--hdj-accent);padding-left:10px;}
+  .hdj-aside{
+    background:var(--hdj-panel);border:1px solid var(--hdj-line);border-radius:var(--hdj-radius);
+    padding:18px;align-self:start;position:sticky;top:120px;
+  }
+  .hdj-aside h4{margin:0 0 10px;font-size:14px;letter-spacing:1px;color:var(--hdj-gold);}
+  .hdj-aside ul{margin:0;padding-left:18px;font-size:13px;color:var(--hdj-muted);}
+  .hdj-aside li{margin-bottom:8px;}
+
+  /* 专题 */
+  .hdj-special{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+  .hdj-special-card{
+    background:var(--hdj-panel);border:1px solid var(--hdj-line);border-radius:var(--hdj-radius);
+    padding:18px;display:flex;flex-direction:column;gap:10px;transition:.2s;
+  }
+  .hdj-special-card:hover{transform:translateY(-4px);border-color:rgba(254,44,85,.5);}
+  .hdj-special-card img{aspect-ratio:16/9;object-fit:cover;border-radius:10px;width:100%;}
+  .hdj-special-state{font-size:11.5px;letter-spacing:1px;color:var(--hdj-cyan);}
+  .hdj-special-card ul{margin:0;padding-left:17px;font-size:13px;color:var(--hdj-muted);}
+  .hdj-special-card li{margin-bottom:5px;}
+
+  /* 作者双列 */
+  .hdj-authors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;}
+  .hdj-author{
+    display:flex;gap:14px;background:var(--hdj-panel);border:1px solid var(--hdj-line);
+    border-radius:var(--hdj-radius);padding:16px;transition:.2s;align-items:flex-start;
+  }
+  .hdj-author:hover{border-color:rgba(37,244,238,.45);transform:translateY(-2px);}
+  .hdj-avatar{
+    width:54px;height:54px;border-radius:50%;flex:none;display:grid;place-items:center;
+    font-weight:800;font-size:19px;color:#101014;letter-spacing:1px;
+  }
+  .hdj-author-info{min-width:0;}
+  .hdj-author-info b{font-size:15px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+  .hdj-author-info .hdj-field{font-size:11.5px;color:var(--hdj-cyan);border:1px solid rgba(37,244,238,.3);border-radius:999px;padding:0 8px;font-weight:500;}
+  .hdj-author-info p{font-size:13px;color:var(--hdj-muted);margin:6px 0 8px;}
+  .hdj-author-stats{font-size:12px;color:#85859a;display:flex;gap:14px;flex-wrap:wrap;}
+  .hdj-more-link{
+    border:0;background:transparent;color:var(--hdj-accent);font-size:12.5px;padding:0;font-weight:600;
+  }
+
+  /* 评论双列 */
+  .hdj-comments{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+  .hdj-comment{
+    background:var(--hdj-panel);border:1px solid var(--hdj-line);border-radius:12px;padding:15px 16px;
+  }
+  .hdj-comment-top{display:flex;align-items:center;gap:9px;margin-bottom:7px;}
+  .hdj-comment-avatar{
+    width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+    font-size:12px;font-weight:800;color:#101014;flex:none;
+  }
+  .hdj-comment-name{font-size:13px;font-weight:700;}
+  .hdj-comment-time{font-size:11.5px;color:#73738a;margin-left:auto;}
+  .hdj-comment p{margin:0;font-size:13.5px;color:#c5c5d2;}
+  .hdj-comment-score{font-size:12px;color:var(--hdj-gold);letter-spacing:1px;margin-top:6px;display:block;}
+
+  /* 图文索引 */
+  .hdj-index-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;}
+  .hdj-index-card{
+    background:var(--hdj-panel);border:1px solid var(--hdj-line);border-radius:var(--hdj-radius);
+    overflow:hidden;transition:.2s;display:flex;flex-direction:column;
+  }
+  .hdj-index-card:hover{transform:translateY(-3px);border-color:rgba(255,210,63,.5);}
+  .hdj-index-card img{width:100%;aspect-ratio:3/2;object-fit:cover;}
+  .hdj-index-card .hdj-pad{padding:14px 16px 16px;}
+  .hdj-index-card p{font-size:13px;color:var(--hdj-muted);margin:6px 0 0;}
+
+  /* 动态与FAQ */
+  .hdj-dyn-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px;}
+  .hdj-dyn-list{list-style:none;margin:0;padding:0;}
+  .hdj-dyn-list li{
+    padding:13px 0;border-bottom:1px dashed var(--hdj-line);display:flex;gap:14px;align-items:flex-start;
+  }
+  .hdj-dyn-date{font-size:12px;color:var(--hdj-gold);flex:none;font-variant-numeric:tabular-nums;}
+  .hdj-dyn-list p{margin:0;font-size:13.5px;color:#c5c5d2;}
+  .hdj-faq details{
+    background:var(--hdj-panel);border:1px solid var(--hdj-line);border-radius:11px;
+    padding:12px 16px;margin-bottom:10px;
+  }
+  .hdj-faq summary{
+    cursor:pointer;font-size:14px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:10px;
+  }
+  .hdj-faq summary::-webkit-details-marker{display:none;}
+  .hdj-faq summary::after{content:"＋";color:var(--hdj-accent);font-weight:700;}
+  .hdj-faq details[open] summary::after{content:"－";}
+  .hdj-faq details p{font-size:13.5px;color:var(--hdj-muted);margin:9px 0 0;}
+
+  /* 合作 */
+  .hdj-partners{display:flex;gap:12px;flex-wrap:wrap;}
+  .hdj-partner{
+    border:1px solid var(--hdj-line);border-radius:11px;background:var(--hdj-panel);
+    padding:12px 18px;font-size:13.5px;color:#c5c5d2;transition:.18s;
+  }
+  .hdj-partner:hover{border-color:var(--hdj-cyan);color:var(--hdj-cyan);}
+
+  .hdj-cta{
+    background:linear-gradient(120deg,rgba(254,44,85,.14),rgba(37,244,238,.1));
+    border:1px solid var(--hdj-line);border-radius:18px;padding:28px;display:flex;
+    gap:20px;flex-wrap:wrap;align-items:center;justify-content:space-between;
+  }
+  .hdj-cta h3{margin:0 0 6px;font-size:20px;}
+  .hdj-cta p{margin:0;font-size:13.5px;color:var(--hdj-muted);max-width:56ch;}
+
+  /* 页脚 */
+  .hdj-footer{border-top:1px solid var(--hdj-line);background:#0a0a0c;padding:40px 0 28px;margin-top:20px;}
+  .hdj-footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:26px;}
+  .hdj-footer h5{font-size:13px;letter-spacing:1.5px;color:var(--hdj-gold);margin:0 0 12px;}
+  .hdj-footer ul{list-style:none;margin:0;padding:0;font-size:13px;color:var(--hdj-muted);}
+  .hdj-footer li{margin-bottom:8px;}
+  .hdj-footer p{font-size:13px;color:var(--hdj-muted);margin:0 0 8px;}
+  .hdj-copy{
+    border-top:1px solid var(--hdj-line);margin-top:28px;padding-top:18px;
+    font-size:12px;color:#6d6d80;display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between;
+  }
+
+  /* 弹窗 & Toast */
+  .hdj-modal-mask{
+    position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:90;
+    display:none;align-items:center;justify-content:center;padding:20px;
+  }
+  .hdj-modal-mask.hdj-open{display:flex;}
+  .hdj-modal{
+    background:var(--hdj-panel);border:1px solid var(--hdj-line);border-radius:16px;
+    max-width:480px;width:100%;padding:24px;max-height:86vh;overflow:auto;
+  }
+  .hdj-modal h3{margin:0 0 10px;font-size:18px;}
+  .hdj-modal p{font-size:13.5px;color:var(--hdj-muted);margin:0 0 10px;}
+  .hdj-modal .hdj-modal-close{
+    float:right;border:0;background:transparent;color:var(--hdj-muted);font-size:20px;line-height:1;
+  }
+  .hdj-modal input,.hdj-modal textarea{
+    width:100%;background:var(--hdj-panel-2);border:1px solid var(--hdj-line);border-radius:9px;
+    color:var(--hdj-text);padding:10px 12px;font-size:13.5px;font-family:inherit;margin-bottom:10px;outline:0;
+  }
+  .hdj-modal textarea{min-height:90px;resize:vertical;}
+  .hdj-toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+    background:#f2f2f5;color:#101014;font-size:13.5px;font-weight:600;
+    padding:11px 22px;border-radius:999px;z-index:120;opacity:0;pointer-events:none;
+    transition:.25s;box-shadow:0 14px 34px rgba(0,0,0,.5);
+  }
+  .hdj-toast.hdj-show{opacity:1;transform:translate(-50%,0);}
+
+  .hdj-top-btn{
+    position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:50%;
+    background:var(--hdj-accent);color:#fff;border:0;font-size:18px;z-index:70;
+    display:none;place-items:center;box-shadow:0 10px 26px rgba(254,44,85,.4);
+  }
+  .hdj-top-btn.hdj-show{display:grid;}
+
+  @media (max-width:1024px){
+    .hdj-hero-grid{grid-template-columns:1fr;gap:26px;}
+    .hdj-hero-visual img{aspect-ratio:16/10;}
+    .hdj-parse-grid{grid-template-columns:1fr;}
+    .hdj-aside{position:static;}
+    .hdj-focus-grid{grid-template-columns:1fr;}
+    .hdj-special{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .hdj-index-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .hdj-footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:760px){
+    .hdj-nav{
+      display:none;position:absolute;left:0;right:0;top:100%;
+      background:#101014;border-bottom:1px solid var(--hdj-line);
+      flex-direction:column;padding:12px 22px 18px;gap:2px;
+    }
+    .hdj-nav.hdj-open{display:flex;}
+    .hdj-header-inner{position:relative;flex-wrap:wrap;}
+    .hdj-menu-toggle{display:block;}
+    .hdj-head-tools{order:3;width:100%;margin-left:0;justify-content:space-between;}
+    .hdj-search{flex:1;}
+    .hdj-search input{width:100%;}
+    .hdj-authors,.hdj-comments,.hdj-special,.hdj-index-grid,.hdj-dyn-grid{grid-template-columns:1fr;}
+    .hdj-stats{grid-template-columns:1fr;}
+    .hdj-vrow{grid-template-columns:28px minmax(0,1fr);}
+    .hdj-vops{grid-column:1 / -1;padding-left:44px;}
+    .hdj-footer-grid{grid-template-columns:1fr;}
+    .hdj-hero-float{left:8px;bottom:10px;}
+    .hdj-announce-btn{display:none;}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- S1 公告条 + 页头 -->
+<div class="hdj-sticky">
+  <div class="hdj-announce">
+    <div class="hdj-announce-inner">
+      <span class="hdj-announce-tag">官方发布</span>
+      <div class="hdj-announce-list">
+        <span>「城市心跳混剪企划」第 3 期投稿通道已开启，截稿 12 月 8 日</span>
+        <span>正版曲库新增 620 首可商用 BGM</span>
+        <span>冬季创作大赛报名中，冠军奖金 5 万元</span>
+        <span>新版智能踩点工具 v4.2 全量上线</span>
+      </div>
+      <button class="hdj-announce-btn" type="button" data-hdj-open="submit">立即投稿</button>
+    </div>
+  </div>
+
+  <header class="hdj-header">
+    <div class="hdj-header-inner">
+      <a class="hdj-logo" href="#top" aria-label="混剪抖音风官方网站首页">
+        <span class="hdj-logo-mark"><span>混</span></span>
+        <span class="hdj-logo-text">
+          <b>混剪抖音风</b>
+          <small>OFFICIAL VIDEO HUB</small>
+        </span>
+      </a>
+      <nav class="hdj-nav" id="hdjNav" aria-label="主导航">
+        <a href="#top">首页</a>
+        <a href="#focus">焦点内容</a>
+        <a href="#parse">品牌解读</a>
+        <a href="#special">专题企划</a>
+        <a href="#authors">创作者</a>
+        <a href="#comments">用户口碑</a>
+        <a href="#news">企业动态</a>
+        <a href="#faq">帮助中心</a>
+      </nav>
+      <div class="hdj-head-tools">
+        <div class="hdj-search">
+          <input id="hdjSearchInput" type="search" placeholder="搜索混剪作品 / 创作者 / 曲库" aria-label="站内搜索">
+          <button type="button" id="hdjSearchBtn">搜索</button>
+        </div>
+        <button class="hdj-menu-toggle" type="button" id="hdjMenuToggle" aria-expanded="false" aria-controls="hdjNav">☰</button>
+      </div>
+    </div>
+    <div class="hdj-search-feedback" id="hdjSearchFeedback" role="status" aria-live="polite"></div>
+  </header>
+</div>
+
+<main id="top">
+
+  <!-- S2 品牌首屏 -->
+  <section class="hdj-hero">
+    <div class="hdj-wrap hdj-hero-grid">
+      <div>
+        <div class="hdj-badge-row">
+          <span class="hdj-chip hdj-chip-hot">官方网站</span>
+          <span class="hdj-chip">原创 · 正版 · 高清</span>
+          <span class="hdj-chip">持续运营 6 年</span>
+        </div>
+        <h1><em>混剪抖音风</em></h1>
+        <p class="hdj-hero-sub">一个为短视频创作者而生的混剪内容品牌与视频社区，用节奏、转场与画面叙事，把平凡素材剪成有力量的作品。</p>
+        <p class="hdj-hero-lead">作为深耕混剪垂直领域的视频品牌，混剪抖音风官网汇聚高清正版素材、系统化剪辑方法论与活跃的创作者社群。我们相信，一次精准的踩点、一处克制的转场，都能让内容拥有被记住的可能。平台坚持原创优先、用户至上，为品牌与企业提供可复用的短视频内容解决方案。</p>
+        <div class="hdj-hero-actions">
+          <button class="hdj-btn hdj-btn-primary" type="button" data-hdj-open="submit">开始投稿</button>
+          <a class="hdj-btn hdj-btn-ghost" href="#focus">浏览精品内容</a>
+          <a class="hdj-btn hdj-btn-ghost" href="#authors">认识创作者</a>
+        </div>
+        <div class="hdj-stats">
+          <div class="hdj-stat"><b>48.6万+</b><span>平台原创混剪作品</span></div>
+          <div class="hdj-stat"><b>1.2亿</b><span>月度视频播放量</span></div>
+          <div class="hdj-stat"><b>3,860</b><span>认证创作者入驻</span></div>
+        </div>
+      </div>
+      <div class="hdj-hero-visual">
+        <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 600'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%231b1030'/%3E%3Cstop offset='1' stop-color='%23370d1c'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23fe2c55'/%3E%3Cstop offset='1' stop-color='%23ffd23f'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='480' height='600' fill='url(%23a)'/%3E%3Cg opacity='.5'%3E%3Crect x='40' y='60' width='180' height='120' rx='10' fill='%2325f4ee' opacity='.16'/%3E%3Crect x='250' y='110' width='190' height='140' rx='10' fill='%23fe2c55' opacity='.18'/%3E%3Crect x='70' y='230' width='340' height='150' rx='10' fill='%23ffd23f' opacity='.1'/%3E%3C/g%3E%3Cg%3E%3Cpath d='M120 300 L150 300 L165 240 L185 380 L205 210 L225 330 L245 265 L270 300 L330 300' fill='none' stroke='url(%23b)' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3Cg fill='%23f2f2f5' opacity='.9'%3E%3Crect x='70' y='420' width='150' height='12' rx='6' opacity='.5'/%3E%3Crect x='70' y='446' width='240' height='12' rx='6' opacity='.34'/%3E%3Crect x='70' y='472' width='190' height='12' rx='6' opacity='.22'/%3E%3C/g%3E%3Ccircle cx='370' cy='500' r='44' fill='none' stroke='%2325f4ee' stroke-width='3' opacity='.7'/%3E%3Cpath d='M356 500 L368 512 L388 486' fill='none' stroke='%2325f4ee' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" alt="混剪抖音风官方主视觉：节奏波形与多轨画面构成的短视频剪辑工作台" width="480" height="600">
+        <div class="hdj-hero-float"><span class="hdj-dot-live"></span>正在直播：转场节奏实战拆解</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- S3 焦点内容 -->
+  <section class="hdj-section" id="focus">
+    <div class="hdj-wrap">
+      <div class="hdj-sec-head">
+        <p class="hdj-kicker">Featured · 焦点内容</p>
+        <h2>本周混剪抖音风重点推荐：三支被反复回看的原创作品</h2>
+        <p class="hdj-sec-desc">每一支入选作品都经过编辑组人工复核，从节奏卡点、转场逻辑到色彩统一性逐项打分。高清正版素材来源可追溯，创作者授权清晰，可作为品牌与企业短视频创作的参考样本。</p>
+      </div>
+
+      <div class="hdj-focus-grid">
+        <article class="hdj-focus-main">
+          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Cdefs%3E%3ClinearGradient id='c' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f2436'/%3E%3Cstop offset='1' stop-color='%230b1a12'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='640' height='360' fill='url(%23c)'/%3E%3Cg stroke='%2325f4ee' stroke-opacity='.45' stroke-width='1.5'%3E%3Cpath d='M0 300 L120 210 L240 260 L360 150 L500 220 L640 130' fill='none'/%3E%3Cpath d='M0 330 L120 250 L240 300 L360 200 L500 270 L640 180' fill='none' stroke='%23fe2c55' stroke-opacity='.5'/%3E%3C/g%3E%3Cg fill='%23ffd23f'%3E%3Ccircle cx='120' cy='210' r='5'/%3E%3Ccircle cx='360' cy='150' r='6'/%3E%3Ccircle cx='500' cy='220' r='4'/%3E%3C/g%3E%3Cg fill='%23f2f2f5' opacity='.85'%3E%3Crect x='36' y='40' width='210' height='14' rx='7' opacity='.6'/%3E%3Crect x='36' y='66' width='300' height='12' rx='6' opacity='.3'/%3E%3C/g%3E%3Crect x='480' y='36' width='124' height='34' rx='17' fill='%23fe2c55' opacity='.9'/%3E%3Ctext x='502' y='58' font-family='sans-serif' font-size='15' fill='%23fff'%3E高清正版%3C/text%3E%3C/svg%3E" alt="城市夜跑混剪作品封面：霓虹轨道与跑步者剪影" width="640" height="360">
+          <div class="hdj-pad">
+            <span class="hdj-tag hdj-tag-pink">重点推荐</span><span class="hdj-tag">城市探索</span><span class="hdj-tag hdj-tag-gold">4K 高清</span>
+            <h3>《夜跑者曲线》：把一座城市的霓虹剪成一条呼吸线</h3>
+            <p style="color:var(--hdj-muted);font-size:13.5px;margin:4px 0 10px;">作者「剪辑师阿野」用 87 段手机素材完成的作品，把夜跑者的呼吸频率映射到镜头切换速度上。全片 96 秒，共 142 个剪切点，平均镜头长度 0.68 秒，却在第 63 秒插入一个 3.2 秒的静止长镜，让情绪落地。</p>
+            <div class="hdj-meta">
+              <span>播放 186.4万</span><span>点赞 12.8万</span><span>收藏 4.6万</span><span>评论 3,102</span>
+            </div>
+            <div class="hdj-vops" style="margin-top:14px;">
+              <button class="hdj-action" type="button" data-hdj-like="128000">❤ 点赞</button>
+              <button class="hdj-action" type="button" data-hdj-fav>☆ 收藏</button>
+              <button class="hdj-action" type="button" data-hdj-copy>⧉ 复制链接</button>
+              <button class="hdj-action" type="button" data-hdj-open="share">分享</button>
+            </div>
+          </div>
+        </article>
+
+        <div class="hdj-focus-side">
+          <article class="hdj-mini">
+            <span class="hdj-tag">教程干货</span>
+            <h3>三段式踩点法：新手也能一次剪出「抖音感」</h3>
+            <p>把 BGM 拆成鼓点层、旋律层、留白层，逐层匹配素材情绪，而不是盲目堆砌卡点。本片附完整时间线工程截图。</p>
+            <div class="hdj-meta"><span>作者：鼓点实验室</span><span>播放 94.2万</span></div>
+          </article>
+          <article class="hdj-mini">
+            <span class="hdj-tag hdj-tag-gold">品牌故事</span>
+            <h3>六个机位，讲一个关于「回家」的混剪故事</h3>
+            <p>品牌委托创作项目，全程使用原创授权素材，用同一段门铃声作为六条线索的钩子，收束于除夕饭桌。</p>
+            <div class="hdj-meta"><span>作者：北窗影像</span><span>播放 71.6万</span></div>
+          </article>
+        </div>
+      </div>
+
+      <h3 style="margin:28px 0 4px;font-size:16px;">混剪抖音风本周热门视频流</h3>
+      <div class="hdj-vlist">
+        <article class="hdj-vrow">
+          <div class="hdj-vrank">01</div>
+          <div class="hdj-vbody">
+            <h3>《十分钟通勤》｜把地铁窗外的光剪成一首循环曲</h3>
+            <p>素材只有 34 段早晚高峰的车窗光斑，作者用重复镜头与渐变遮罩制造循环感，评论区被称为「打工人的影像止痛药」。</p>
+            <span class="hdj-tag">日常记录</span><span class="hdj-tag">治愈影像</span>
+            <div class="hdj-meta" style="margin-top:8px;"><span>作者：林间频道</span><span>播放 63.1万</span><span>点赞 5.7万</span><span>收藏 2.1万</span></div>
+          </div>
+          <div class="hdj-vops">
+            <button class="hdj-action" type="button" data-hdj-like="57000">❤ 5.7万</button>
+            <button class="hdj-action" type="button" data-hdj-fav>☆ 收藏</button>
+            <button class="hdj-action" type="button" data-hdj-copy>复制链接</button>
+          </div>
+        </article>
+        <article class="hdj-vrow">
+          <div class="hdj-vrank">02</div>
+          <div class="hdj-vbody">
+            <h3>《转场之外》｜五种无缝转场的实拍与拆解对照</h3>
+            <p>拍摄现场与成片并置播放，逐个说明遮罩转场、匹配剪辑、动作接续的适用场景与失败案例。</p>
+            <span class="hdj-tag">教程干货</span><span class="hdj-tag hdj-tag-pink">深度测评</span>
+            <div class="hdj-meta" style="margin-top:8px;"><span>作者：剪辑师阿野</span><span>播放 48.9万</span><span>点赞 4.2万</span><span>收藏 3.4万</span></div>
+          </div>
+          <div class="hdj-vops">
+            <button class="hdj-action" type="button" data-hdj-like="42000">❤ 4.2万</button>
+            <button class="hdj-action" type="button" data-hdj-fav>☆ 收藏</button>
+            <button class="hdj-action" type="button" data-hdj-copy>复制链接</button>
+          </div>
+        </article>
+        <article class="hdj-vrow">
+          <div class="hdj-vrank">03</div>
+          <div class="hdj-vbody">
+            <h3>《菜市场交响》｜用锅铲与叫卖声做一条混剪</h3>
+            <p>环境声即配乐。作者把菜市场的敲击、吆喝、爆炒声按节奏排序，画面同步切成特写，呈现非常真实的劳动质感。</p>
+            <span class="hdj-tag">在地文化</span><span class="hdj-tag">美食烹饪</span>
+            <div class="hdj-meta" style="margin-top:8px;"><span>作者：鼓点实验室</span><span>播放 55.3万</span><span>点赞 4.9万</span><span>收藏 1.8万</span></div>
+          </div>
+          <div class="hdj-vops">
+            <button class="hdj-action" type="button" data-hdj-like="49000">❤ 4.9万</button>
+            <button class="hdj-action" type="button" data-hdj-fav>☆ 收藏</button>
+            <button class="hdj-action" type="button" data-hdj-copy>复制链接</button>
+          </div>
+        </article>
+        <article class="hdj-vrow">
+          <div class="hdj-vrank">04</div>
+          <div class="hdj-vbody">
+            <h3>《旧胶片里的夏天》｜复古调色与颗粒叠加全流程</h3>
+            <p>从 Log 素材还原到胶片曲线，逐步骤演示如何在混剪中保持多机位色彩一致，附免费 LUT 下载说明。</p>
+            <span class="hdj-tag">教程干货</span><span class="hdj-tag hdj-tag-gold">创作幕后</span>
+            <div class="hdj-meta" style="margin-top:8px;"><span>作者：北窗影像</span><span>播放 39.7万</span><span>点赞 3.6万</span><span>收藏 2.9万</span></div>
+          </div>
+          <div class="hdj-vops">
+            <button class="hdj-action" type="button" data-hdj-like="36000">❤ 3.6万</button>
+            <button class="hdj-action" type="button" data-hdj-fav>☆ 收藏</button>
+            <button class="hdj-action" type="button" data-hdj-copy>复制链接</button>
+          </div>
+        </article>
+        <article class="hdj-vrow">
+          <div class="hdj-vrank">05</div>
+          <div class="hdj-vbody">
+            <h3>《一平方米的手作间》｜木屑飞起来的那一刻最像音乐</h3>
+            <p>手作人与剪辑者合作的实验短片，把打磨的往复动作与鼓组重音对齐，让工艺过程本身成为节奏来源。</p>
+            <span class="hdj-tag">手作DIY</span><span class="hdj-tag">情感故事</span>
+            <div class="hdj-meta" style="margin-top:8px;"><span>作者：南枝手记</span><span>播放 31.2万</span><span>点赞 2.8万</span><span>收藏 1.1万</span></div>
+          </div>
+          <div class="hdj-vops">
+            <button class="hdj-action" type="button" data-hdj-like="28000">❤ 2.8万</button>
+            <button class="hdj-action" type="button" data-hdj-fav>☆ 收藏</button>
+            <button class="hdj-action" type="button" data-hdj-copy>复制链接</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关键词解析 M15 / S6 部分 -->
+  <section class="hdj-section" id="parse">
+    <div class="hdj-wrap">
+      <div class="hdj-sec-head">
+        <p class="hdj-kicker">Brand Insight · 深度解读</p>
+        <h2>读懂混剪抖音风：从一条 15 秒视频到一套内容生态</h2>
+        <p class="hdj-sec-desc">我们把「混剪抖音风」拆成四层来看：节奏、素材、叙事与社区。这不是玄学，而是可以被学习、被复制、被长期运营的方法体系。</p>
+      </div>
+
+      <div class="hdj-parse-grid">
+        <div class="hdj-parse-text">
+          <h3>一、什么是「混剪抖音风」：节奏先行的影像语言</h3>
+          <p>混剪抖音风并不是一个简单的滤镜名称，它更像是一套被反复验证过的影像语法。它的第一个关键词是节奏。传统视频剪辑往往先讲故事，再考虑镜头长度；而混剪抖音风反过来，先确定声音的结构，再让画面去贴合声音。一条 15 秒的短视频，通常会被拆成前 1.5 秒的钩子、3 到 5 秒的情绪铺陈、6 到 10 秒的信息密集区，以及最后 2 秒的收束与回看动机。这种结构不是公式，但它解释了为什么有些视频你只看了一秒就停不下来。</p>
+          <p>第二个关键词是素材密度。在混剪抖音风里，素材不是越多越好，而是越「准」越好。同样一段三秒的街景，放在鼓点前是铺垫，放在鼓点后是爆发，放在留白处是呼吸。平台编辑组在审片时有个共识：一条混剪作品如果每一秒都在用力，观众反而记不住任何一秒。真正的高手会在密集剪切中主动埋下三到四个静止或慢速镜头，让节奏产生落差，落差才带来记忆点。</p>
+          <h3>二、素材与版权：正版高清是内容生态的地基</h3>
+          <p>混剪绕不开素材来源。混剪抖音风官网自建曲库与影像素材库，目前收录 620 首可商用授权音乐、约 1.4 万条高清正版空镜与城市实拍片段，全部标注授权范围与可商用场景。创作者在平台内下载素材时，会自动生成授权记录，投稿时随作品一并存证。这样做的原因很实际：过去很多创作者剪出了爆款，却因为 BGM 版权问题被迫下架，甚至影响账号权重。平台把授权前置，等于替创作者把最容易被忽视的风险承担下来。</p>
+          <p>与此同时，平台坚持原创优先的原则。所有标注「原创」标签的作品，都需通过素材溯源与工程文件抽检；一旦发现搬运或二次剪辑未授权内容，作品会被撤下标签并进入复核流程。我们并不认为审核是限制，恰恰相反，它是让认真创作的人被看见的前提。一个持续运营的内容社区，必须让守规矩的人获得回报，这正是混剪抖音风作为企业级视频平台的基本立场。</p>
+          <h3>三、从个人表达走向品牌内容：企业短视频的现实解法</h3>
+          <p>过去两年，越来越多的品牌与企业开始在混剪抖音风上寻找合作创作者。原因不难理解：传统广告片拍摄周期长、成本高，而混剪形式可以用更轻的方式完成产品情绪的传达。平台目前提供三种合作路径——品牌命题创作、素材共创、以及官方发布的内容挑战赛。企业提供产品与场景素材，创作者负责节奏设计与叙事重组，平台负责授权审核与分发，三方各司其职。已完成的案例中，一支家居品牌的四季混剪在 72 小时内获得 240 万次播放，评论区大量用户主动询问产品型号，这说明好的混剪不只是传播，它确实能承担商业转化的功能。</p>
+          <p>对创作者来说，这也是成长路径的一部分。平台设有「新人榜」「热度榜」「口碑榜」三个维度的榜单，新人榜看首月完播率与互动质量，口碑榜则由用户评分与编辑复核共同决定。榜单不是目的，但它给了创作者一个相对透明的参照系：什么样的作品被认可，为什么被认可。我们更希望创作者理解，混剪抖音风的核心竞争力从来不是模仿某种流行样式，而是把属于自己的观察，用准确的节奏表达出来。</p>
+          <h3>四、社区与陪伴：内容平台的长期主义</h3>
+          <p>一个视频平台真正的壁垒不是算法，而是人与人的连接。混剪抖音风的评论区里，经常能看到创作者之间互相拆解时间线、讨论某个转场为什么失败、分享自己踩过的坑。平台每周三固定开放「剪辑门诊」直播，由认证创作者轮流值班，免费看片并给出具体修改建议。这种陪伴感看似低效，但它带来了极高的用户留存与口碑。很多用户说，他们留下来不是因为某个爆款，而是因为这里有人认真回复他们的作品。</p>
+          <p>从社会责任的角度，平台也在做力所能及的事：面向高校与职业院校开放免费的混剪课程包，与公益组织合作记录手艺人、护林员、乡村教师的日常影像，并把这些素材整理成可授权的公共素材库。我们相信，一个值得信赖的视频品牌，应当既能产出精品内容，也能让更多普通人的故事被温柔地记录下来。这就是混剪抖音风持续运营的意义，也是我们对自己「真实、温暖、有力量」的内容主张最朴素的坚持。</p>
+        </div>
+
+        <aside class="hdj-aside">
+          <h4>品牌关键词速览</h4>
+          <ul>
+            <li>节奏先行：先定声音结构，再排画面</li>
+            <li>素材密度：密集剪切中主动留白</li>
+            <li>正版高清：授权记录随作品存证</li>
+            <li>原创优先：素材溯源 + 工程抽检</li>
+            <li>三方协作：品牌 / 创作者 / 平台</li>
+            <li>透明榜单：新人榜、热度榜、口碑榜</li>
+            <li>剪辑门诊：每周三免费看片直播</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4 专题企划 -->
+  <section class="hdj-section" id="special">
+    <div class="hdj-wrap">
+      <div class="hdj-sec-head">
+        <p class="hdj-kicker">Series · 专题企划</p>
+        <h2>正在进行的混剪抖音风专题企划</h2>
+        <p class="hdj-sec-desc">专题由平台编辑组发起，创作者自由报名参与。每个专题都有明确的素材范围与节奏要求，最终成片统一进入官方精选池。</p>
+      </div>
+      <div class="hdj-special">
+        <article class="hdj-special-card">
+          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%23101522'/%3E%3Cg fill='none' stroke='%23ffd23f' stroke-width='2' opacity='.7'%3E%3Ccircle cx='110' cy='135' r='62'/%3E%3Ccircle cx='110' cy='135' r='38'/%3E%3C/g%3E%3Cg fill='%23fe2c55'%3E%3Crect x='210' y='60' width='14' height='150' rx='7'/%3E%3Crect x='240' y='95' width='14' height='80' rx='7'/%3E%3Crect x='270' y='40' width='14' height='190' rx='7'/%3E%3Crect x='300' y='110' width='14' height='50' rx='7'/%3E%3C/g%3E%3Cg fill='%2325f4ee' opacity='.8'%3E%3Crect x='350' y='80' width='90' height='10' rx='5'/%3E%3Crect x='350' y='104' width='66' height='10' rx='5'/%3E%3Crect x='350' y='128' width='78' height='10' rx='5'/%3E%3C/g%3E%3C/svg%3E" alt="城市心跳混剪企划专题配图：城市圆形轨道与音频波形" width="480" height="270">
+          <span class="hdj-special-state">更新中 · 已收 412 稿</span>
+          <h3>城市心跳混剪企划 第 3 期</h3>
+          <p style="font-size:13px;color:var(--hdj-muted);margin:0;">以「一座城市的呼吸」为题，要求作品中出现至少 3 处真实环境声采样。</p>
+          <ul>
+            <li>《凌晨四点的早点铺》· 阿野</li>
+            <li>《地铁末班车广播》· 林间频道</li>
+            <li>《高架桥下的琴声》· 北窗影像</li>
+          </ul>
+        </article>
+        <article class="hdj-special-card">
+          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%231a1424'/%3E%3Cg stroke='%23fe2c55' stroke-width='3' fill='none'%3E%3Cpath d='M40 200 C120 60 200 240 280 90 C340 10 400 180 440 120'/%3E%3C/g%3E%3Cg fill='%23f2f2f5' opacity='.82'%3E%3Ccircle cx='120' cy='130' r='7'/%3E%3Ccircle cx='280' cy='90' r='9'/%3E%3Ccircle cx='400' cy='160' r='6'/%3E%3C/g%3E%3Cg fill='%2325f4ee' opacity='.55'%3E%3Crect x='40' y='40' width='150' height='9' rx='4'/%3E%3Crect x='40' y='60' width='110' height='9' rx='4'/%3E%3C/g%3E%3C/svg%3E" alt="十五秒讲故事专题配图：一条弯曲的时间轴与三个关键节点" width="480" height="270">
+          <span class="hdj-special-state">报名中 · 截止 12 月 8 日</span>
+          <h3>十五秒讲故事：极限时长叙事挑战</h3>
+          <p style="font-size:13px;color:var(--hdj-muted);margin:0;">限定 15 秒，必须包含完整起承转合，禁止使用口播字幕推进剧情。</p>
+          <ul>
+            <li>《一双鞋的一生》· 南枝手记</li>
+            <li>《最后一班公交》· 林间频道</li>
+            <li>《母亲的针线盒》· 鼓点实验室</li>
+          </ul>
+        </article>
+        <article class="hdj-special-card">
+          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 480 270'%3E%3Crect width='480' height='270' fill='%2312201a'/%3E%3Cg opacity='.85'%3E%3Crect x='50' y='150' width='60' height='80' fill='%2325f4ee' opacity='.35'/%3E%3Crect x='130' y='110' width='60' height='120' fill='%23ffd23f' opacity='.3'/%3E%3Crect x='210' y='70' width='60' height='160' fill='%23fe2c55' opacity='.3'/%3E%3Crect x='290' y='120' width='60' height='110' fill='%23f2f2f5' opacity='.2'/%3E%3Crect x='370' y='90' width='60' height='140' fill='%2325f4ee' opacity='.28'/%3E%3C/g%3E%3Cg stroke='%23ffd23f' stroke-width='2' opacity='.6'%3E%3Cpath d='M40 150 L440 150' stroke-dasharray='6 8'/%3E%3C/g%3E%3C/svg%3E" alt="色彩管理专题配图：五组色块与一条水平基准线" width="480" height="270">
+          <span class="hdj-special-state">长期开放 · 精品课程配套</span>
+          <h3>色彩一致性：多机位混剪的调色功课</h3>
+          <p style="font-size:13px;color:var(--hdj-muted);margin:0;">由平台调色顾问主讲，配套 6 节图文课与 12 组对照素材。</p>
+          <ul>
+            <li>《白平衡统一的三种做法》· 北窗影像</li>
+            <li>《肤色保护与风格化边界》· 阿野</li>
+            <li>《胶片曲线的自制方法》· 林间频道</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S5 创作者矩阵 -->
+  <section class="hdj-section" id="authors">
+    <div class="hdj-wrap">
+      <div class="hdj-sec-head">
+        <p class="hdj-kicker">Creators · 创作者矩阵</p>
+        <h2>混剪抖音风认证创作者名录</h2>
+        <p class="hdj-sec-desc">每位认证创作者都需通过作品复核与版权承诺，方可获得认证标识。点击「作者档案」可查看其完整作品线与创作方法说明。</p>
+      </div>
+      <div class="hdj-authors">
+        <article class="hdj-author">
+          <div class="hdj-avatar" style="background:linear-gradient(135deg,#fe2c55,#ffd23f);">野</div>
+          <div class="hdj-author-info">
+            <b>剪辑师阿野 <span class="hdj-field">节奏设计</span></b>
+            <p>前广告剪辑师，擅长把长素材压缩成高密度节奏。主张「先剪声音，再剪画面」，作品平均镜头长度 0.7 秒，却少见炫技。</p>
+            <div class="hdj-author-stats"><span>作品 214</span><span>粉丝 38.6万</span></div>
+            <button class="hdj-more-link" type="button" data-hdj-author="剪辑师阿野|节奏设计|前广告剪辑师，从业八年，服务过多个消费品品牌的短视频项目。主张先剪声音再剪画面，擅长在密集剪切中埋设情绪留白。代表作《夜跑者曲线》播放 186 万。">作者档案 →</button>
+          </div>
+        </article>
+        <article class="hdj-author">
+          <div class="hdj-avatar" style="background:linear-gradient(135deg,#25f4ee,#3a7bd5);">鼓</div>
+          <div class="hdj-author-info">
+            <b>鼓点实验室 <span class="hdj-field">声音叙事</span></b>
+            <p>由两位声音设计师组成的双人组合，专攻环境声与配乐的融合。他们的作品常被当作「听感训练」素材，在创作者中广泛流传。</p>
+            <div class="hdj-author-stats"><span>作品 167</span><span>粉丝 29.2万</span></div>
+            <button class="hdj-more-link" type="button" data-hdj-author="鼓点实验室|声音叙事|双人声音设计组合，成员分别来自音乐制作与纪录片录音背景。专攻环境声采样与配乐融合，开设《三段式踩点法》系列课程，累计服务学员超过两万人。">作者档案 →</button>
+          </div>
+        </article>
+        <article class="hdj-author">
+          <div class="hdj-avatar" style="background:linear-gradient(135deg,#ffd23f,#8e6b1f);">北</div>
+          <div class="hdj-author-info">
+            <b>北窗影像 <span class="hdj-field">品牌叙事</span></b>
+            <p>专注品牌短片与城市纪录，擅长用统一色调维持多机位一致性。团队三人，长期承接企业定制内容，交付周期稳定。</p>
+            <div class="hdj-author-stats"><span>作品 132</span><span>粉丝 21.4万</span></div>
+            <button class="hdj-more-link" type="button" data-hdj-author="北窗影像|品牌叙事|三人影像团队，主攻品牌短片与城市纪录方向。以色彩统一性和克制的运镜著称，长期为家居、出行类企业提供定制混剪内容，交付周期与授权流程规范。">作者档案 →</button>
+          </div>
+        </article>
+        <article class="hdj-author">
+          <div class="hdj-avatar" style="background:linear-gradient(135deg,#7fd1ae,#2f6f58);">林</div>
+          <div class="hdj-author-info">
+            <b>林间频道 <span class="hdj-field">治愈影像</span></b>
+            <p>记录通勤、雨天与窗台光线的生活向创作者。作品节奏偏慢，善用重复镜头制造循环感，被用户称为「下班后的情绪缓冲带」。</p>
+            <div class="hdj-author-stats"><span>作品 189</span><span>粉丝 26.8万</span></div>
+            <button class="hdj-more-link" type="button" data-hdj-author="林间频道|治愈影像|生活记录类创作者，素材九成来自自己的日常与通勤路上。偏好慢节奏与重复构图，主张影像不必解释太多，让观众自己找到情绪入口。">作者档案 →</button>
+          </div>
+        </article>
+        <article class="hdj-author">
+          <div class="hdj-avatar" style="background:linear-gradient(135deg,#b48cff,#4b2f8a);">南</div>
+          <div class="hdj-author-info">
+            <b>南枝手记 <span class="hdj-field">手作与工艺</span></b>
+            <p>手作工作室主理人，用镜头记录打磨、缝制与上色的全过程。她的混剪常把工艺动作与鼓点对齐，让制作过程本身成为节奏。</p>
+            <div class="hdj-author-stats"><span>作品 96</span><span>粉丝 14.3万</span></div>
+            <button class="hdj-more-link" type="button" data-hdj-author="南枝手记|手作与工艺|手作工作室主理人，制作皮具与木器。擅长把工艺动作拆解成节奏单元，与音乐重音对齐。作品被多所职业院校用作教学参考素材。">作者档案 →</button>
+          </div>
+        </article>
+        <article class="hdj-author">
+          <div class="hdj-avatar" style="background:linear-gradient(135deg,#ff8a4c,#8a2c1a);">老</div>
+          <div class="hdj-author-info">
+            <b>老周剪片子 <span class="hdj-field">行业观察</span></b>
+            <p>入行十五年的老剪辑，乐于分享失败案例。他的「剪废了」系列专门复盘翻车现场，被认为是新人最该先看的入门内容。</p>
+            <div class="hdj-author-stats"><span>作品 241</span><span>粉丝 33.1万</span></div>
+            <button class="hdj-more-link" type="button" data-hdj-author="老周剪片子|行业观察|十五年从业经验的剪辑师，做过电视栏目、广告与纪录片。近年专注输出行业观察与失败案例复盘，语言直接，被新人称为最不客气的入门老师。">作者档案 →</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 图文索引 -->
+  <section class="hdj-section" id="index">
+    <div class="hdj-wrap">
+      <div class="hdj-sec-head">
+        <p class="hdj-kicker">Index · 图文索引</p>
+        <h2>混剪抖音风内容索引：按主题快速找到你要的方法</h2>
+        <p class="hdj-sec-desc">索引由编辑组按创作阶段整理，从选题到成片，每一类都配有可实操的方法说明与代表作链接。</p>
+      </div>
+      <div class="hdj-index-grid">
+        <article class="hdj-index-card">
+          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 240'%3E%3Crect width='360' height='240' fill='%2315141c'/%3E%3Cg stroke='%23fe2c55' stroke-width='3' fill='none'%3E%3Cpath d='M40 190 L90 130 L140 160 L190 90 L240 140 L300 70'/%3E%3C/g%3E%3Cg fill='%2325f4ee'%3E%3Crect x='40' y='40' width='120' height='8' rx='4'/%3E%3Crect x='40' y='60' width='80' height='8' rx='4' opacity='.6'/%3E%3C/g%3E%3C/svg%3E" alt="选题与钩子图文索引配图：上升折线与标题块" width="360" height="240">
+          <div class="hdj-pad">
+            <h3>选题与钩子：前 1.5 秒怎么留人</h3>
+            <p>从 300 条高完播作品里归纳出的四种开场方式：反常画面、声音先行、结果前置、文字悬念。</p>
+          </div>
+        </article>
+        <article class="hdj-index-card">
+          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 240'%3E%3Crect width='360' height='240' fill='%23111b26'/%3E%3Cg fill='%23ffd23f' opacity='.75'%3E%3Crect x='40' y='150' width='22' height='50'/%3E%3Crect x='74' y='120' width='22' height='80'/%3E%3Crect x='108' y='90' width='22' height='110'/%3E%3Crect x='142' y='130' width='22' height='70'/%3E%3Crect x='176' y='70' width='22' height='130'/%3E%3C/g%3E%3Cg stroke='%2325f4ee' stroke-width='2' opacity='.6' fill='none'%3E%3Cpath d='M220 190 Q260 60 320 120'/%3E%3C/g%3E%3C/svg%3E" alt="素材管理图文索引配图：柱状素材条与曲线" width="360" height="240">
+          <div class="hdj-pad">
+            <h3>素材管理：给镜头打三层标签</h3>
+            <p>按情绪、景别、可复用度建库，让找素材的时间从二十分钟压到两分钟。</p>
+          </div>
+        </article>
+        <article class="hdj-index-card">
+          <img src="data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 240'%3E%3Crect width='360' height='240' fill='%231c1420'/%3E%3Cg stroke='%23b48cff' stroke-width='2.5' fill='none'%3E%3Crect x='50' y='60' width='110' height='120' rx='8'/%3E%3Crect x='200' y='80' width='110' height='100' rx='8'/%3E%3C/g%3E%3Cg stroke='%23fe2c55' stroke-width='2' fill='none' stroke-dasharray='5 6'%3E%3Cpath d='M160 120 L200 120'/%3E%3C/g%3E%3C/svg%3E" alt="转场选择图文索引配图：两个镜头框之间以虚线连接" width="360" height="240">
+          <div class="hdj-pad">
+            <h3>转场选择：五种无缝手法的边界</h3>
+            <p>遮罩、匹配剪辑、动作接续、声音先入、图形转场，各自适用的场景与失败前提。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S6 用户评价 -->
+  <section class="hdj-section" id="comments">
+    <div class="hdj-wrap">
+      <div class="hdj-sec-head">
+        <p class="hdj-kicker">Voices · 用户评价</p>
+        <h2>社区里的真实声音：创作者与观众怎么评价混剪抖音风</h2>
+        <p class="hdj-sec-desc">评价来自平台用户反馈与作品评论区整理，未做美化处理。我们保留不同意见，因为它们同样有助于平台成长。</p>
+      </div>
+      <div class="hdj-comments">
+        <article class="hdj-comment">
+          <div class="hdj-comment-top">
+            <span class="hdj-comment-avatar" style="background:#fe2c55;">陈</span>
+            <span class="hdj-comment-name">陈默的剪辑台</span>
+            <span class="hdj-comment-time">11-19</span>
+          </div>
+          <p>用了三个月的素材库，最大的感受是授权记录真的省事。之前给客户做片子最怕音乐下架，现在投稿时直接带着证据走，沟通成本低了很多。唯一希望是空镜再多一些南方城市的场景。</p>
+          <span class="hdj-comment-score">★★★★★</span>
+        </article>
+        <article class="hdj-comment">
+          <div class="hdj-comment-top">
+            <span class="hdj-comment-avatar" style="background:#25f4ee;">苏</span>
+            <span class="hdj-comment-name">苏打不加冰</span>
+            <span class="hdj-comment-time">11-17</span>
+          </div>
+          <p>剪辑门诊真的很实在。我拿自己剪废的一条交过去，老师没有客气，直接说我的问题在第二秒就把情绪用完了。改完重投，播放翻了四倍。这种反馈在别的地方基本找不到。</p>
+          <span class="hdj-comment-score">★★★★★</span>
+        </article>
+        <article class="hdj-comment">
+          <div class="hdj-comment-top">
+            <span class="hdj-comment-avatar" style="background:#ffd23f;">小</span>
+            <span class="hdj-comment-name">小镇剪辑爱好者</span>
+            <span class="hdj-comment-time">11-15</span>
+          </div>
+          <p>课程内容很扎实，但对完全零基础的人还是有点快。我前两节看了三四遍才跟上。如果能出一个纯新手的前置包，比如软件基础操作，可能会更友好一些。</p>
+          <span class="hdj-comment-score">★★★☆☆</span>
+        </article>
+        <article class="hdj-comment">
+          <div class="hdj-comment-top">
+            <span class="hdj-comment-avatar" style="background:#7fd1ae;">阿</span>
+            <span class="hdj-comment-name">阿柯看片</span>
+            <span class="hdj-comment-time">11-13</span>
+          </div>
+          <p>作为纯观众说一句，这里的作品明显比别处耐看。不是说技巧多炫，而是能感觉到创作者在认真对待每一个镜头。我经常晚上开着当背景音，听着听着就看完了一整条。</p>
+          <span class="hdj-comment-score">★★★★☆</span>
+        </article>
+        <article class="hdj-comment">
+          <div class="hdj-comment-top">
+            <span class="hdj-comment-avatar" style="background:#b48cff;">木</span>
+            <span class="hdj-comment-name">木木手作</span>
+            <span class="hdj-comment-time">11-11</span>
+          </div>
+          <p>我是做木工的，本来只是随便记录一下打磨过程。没想到有创作者找过来，把我的素材和鼓点剪在一起，那条视频让我多了三百多个客户咨询。这种跨界的连接挺神奇的。</p>
+          <span class="hdj-comment-score">★★★★★</span>
+        </article>
+        <article class="hdj-comment">
+          <div class="hdj-comment-top">
+            <span class="hdj-comment-avatar" style="background:#ff8a4c;">周</span>
+            <span class="hdj-comment-name">老周剪片子</span>
+            <span class="hdj-comment-time">11-09</span>
+          </div>
+          <p>作为在平台发了几百条内容的老用户，我给四星。优点是审核严、口碑真实，缺点是热门榜更新还是稍慢，有些好作品要等一周才被推上来。希望分发能再快一点。</p>
+          <span class="hdj-comment-score">★★★★☆</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- S4+M15 品牌故事 / 企业动态 / FAQ / 合作 -->
+  <section class="hdj-section" id="news">
+    <div class="hdj-wrap">
+      <div class="hdj-sec-head">
+        <p class="hdj-kicker">Newsroom · 企业动态</p>
+        <h2>混剪抖音风官方发布与企业动态</h2>
+        <p class="hdj-sec-desc">关于平台产品、规则与企划的正式信息，均在此处更新。涉及授权政策调整的公告，会额外在站内消息中同步推送。</p>
+      </div>
+
+      <div class="hdj-dyn-grid">
+        <div>
+          <h3 style="margin-bottom:12px;">近期更新</h3>
+          <ul class="hdj-dyn-list">
+            <li><span class="hdj-dyn-date">2026-11-18</span><p>正版曲库完成第 7 轮扩充，新增 620 首可商用 BGM，覆盖电子、国风、Lo-fi 三类使用频率最高的风格。</p></li>
+            <li><span class="hdj-dyn-date">2026-11-12</span><p>智能踩点工具 v4.2 全量上线，新增「环境声自动对齐」与「多轨节拍可视化」两项功能，旧工程可无损升级。</p></li>
+            <li><span class="hdj-dyn-date">2026-11-05</span><p>《混剪创作者版权承诺书》完成第一次修订，明确二次创作授权边界，自 12 月 1 日起执行新版本。</p></li>
+            <li><span class="hdj-dyn-date">2026-10-28</span><p>平台与三所职业院校达成课程合作，将混剪方法论整理为 12 课时教学包，免费开放给在校师生。</p></li>
+          </ul>
+        </div>
+        <div class="hdj-faq" id="faq">
+          <h3 style="margin-bottom:12px;">帮助中心 · 常见问题</h3>
+          <details>
+            <summary>投稿需要什么样的素材授权？</summary>
+            <p>平台内下载的曲库与空镜素材自带授权记录，可放心使用。若使用自制或第三方素材，需在投稿时上传授权说明，编辑组会在 48 小时内完成审核。</p>
+          </details>
+          <details>
+            <summary>原创标签如何申请？</summary>
+            <p>作品发布后可在作品管理页提交原创申请，平台将抽查工程文件与素材溯源信息。通过后作品会获得原创标识，并进入官方精选池候选。</p>
+          </details>
+          <details>
+            <summary>品牌合作怎么对接？</summary>
+            <p>企业在官方发布入口提交合作意向，说明产品、素材范围与预算区间。平台会匹配三位以上符合条件的创作者供选择，全程由平台协助沟通。</p>
+          </details>
+          <details>
+            <summary>剪辑门诊需要预约吗？</summary>
+            <p>每周三晚八点开放，直接在直播间提交作品链接即可。每位用户限提交一条，建议提前准备好具体想解决的问题。</p>
+          </details>
+          <details>
+            <summary>作品被误判搬运怎么办？</summary>
+            <p>可在作品页点击「反馈」提交申诉，附上工程文件截图与原素材来源。复核周期通常为三个工作日，误判将恢复作品并撤回处罚。</p>
+          </details>
+          <details>
+            <summary>平台支持哪些视频规格？</summary>
+            <p>推荐 1080P 及以上、竖屏 9:16 或横屏 16:9，码率不低于 8Mbps。4K 素材可正常上传，平台会自动生成多档清晰度。</p>
+          </details>
+        </div>
+      </div>
+
+      <div style="margin-top:34px;">
+        <h3 style="margin-bottom:12px;">合作品牌与伙伴</h3>
+        <div class="hdj-partners">
+          <span class="hdj-partner">拾光影像器材</span>
+          <span class="hdj-partner">城市文化基金会</span>
+          <span class="hdj-partner">声野音乐工作室</span>
+          <span class="hdj-partner">木言家居</span>
+          <span class="hdj-partner">职校影像课程联盟</span>
+          <span class="hdj-partner">山行户外</span>
+        </div>
+      </div>
+
+      <div class="hdj-cta" style="margin-top:34px;">
+        <div>
+          <h3>把你的混剪作品交给混剪抖音风</h3>
+          <p>无论是第一次尝试，还是已经剪了几百条，这里都有愿意认真看片的人。投稿即有机会进入官方精选池，参与专题企划与品牌共创。</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+          <button class="hdj-btn hdj-btn-primary" type="button" data-hdj-open="submit">投稿入口</button>
+          <button class="hdj-btn hdj-btn-ghost" type="button" data-hdj-open="feedback">意见反馈</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- S8 页脚 -->
+<footer class="hdj-footer">
+  <div class="hdj-wrap">
+    <div class="hdj-footer-grid">
+      <div>
+        <div class="hdj-logo" style="margin-bottom:12px;">
+          <span class="hdj-logo-mark"><span>混</span></span>
+          <span class="hdj-logo-text"><b>混剪抖音风</b><small>OFFICIAL VIDEO HUB</small></span>
+        </div>
+        <p>混剪抖音风官方网站，专注原创混剪短视频的内容社区与创作平台。平台坚持正版高清、原创优先，为创作者与企业搭建值得信赖的视频内容生态。</p>
+        <p>合作邮箱：partner@hunjiandouyin.example</p>
+      </div>
+      <div>
+        <h5>内容</h5>
+        <ul>
+          <li><a href="#focus">焦点内容</a></li>
+          <li><a href="#special">专题企划</a></li>
+          <li><a href="#index">图文索引</a></li>
+          <li><a href="#authors">创作者名录</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>支持</h5>
+        <ul>
+          <li><a href="#faq">帮助中心</a></li>
+          <li><a href="#news">企业动态</a></li>
+          <li><a href="#comments">用户口碑</a></li>
+          <li><a href="#parse">品牌解读</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>关于</h5>
+        <ul>
+          <li>品牌故事</li>
+          <li>授权与版权说明</li>
+          <li>社会责任</li>
+          <li>加入我们</li>
+        </ul>
+      </div>
+    </div>
+    <div class="hdj-copy">
+      <span>© 2026 混剪抖音风 官方网站 · 版权所有 · 持续运营中</span>
+      <span>备案号：京ICP备2026XXXXXX号-3</span>
+    </div>
+  </div>
+</footer>
+
+<!-- 弹窗 -->
+<div class="hdj-modal-mask" id="hdjModalMask" role="dialog" aria-modal="true" aria-labelledby="hdjModalTitle">
+  <div class="hdj-modal">
+    <button class="hdj-modal-close" type="button" id="hdjModalClose" aria-label="关闭弹窗">×</button>
+    <h3 id="hdjModalTitle">投稿入口</h3>
+    <div id="hdjModalBody"></div>
+  </div>
+</div>
+
+<div class="hdj-toast" id="hdjToast" role="status" aria-live="polite"></div>
+<button class="hdj-top-btn" id="hdjTopBtn" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var toastEl = document.getElementById('hdjToast');
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add('hdj-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toastEl.classList.remove('hdj-show'); }, 2200);
+  }
+
+  /* 移动端导航 */
+  var nav = document.getElementById('hdjNav');
+  var menuToggle = document.getElementById('hdjMenuToggle');
+  menuToggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('hdj-open');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    menuToggle.textContent = open ? '×' : '☰';
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){
+      nav.classList.remove('hdj-open');
+      menuToggle.setAttribute('aria-expanded','false');
+      menuToggle.textContent = '☰';
+    }
+  });
+
+  /* 搜索反馈 */
+  var searchInput = document.getElementById('hdjSearchInput');
+  var searchBtn = document.getElementById('hdjSearchBtn');
+  var searchFeedback = document.getElementById('hdjSearchFeedback');
+  function doSearch(){
+    var q = searchInput.value.trim();
+    if(!q){
+      searchFeedback.textContent = '请输入关键词，例如「踩点」「转场」「城市」';
+      searchFeedback.classList.add('hdj-active');
+      return;
+    }
+    var tips = [
+      '在「转场选择」与「节奏设计」两个专题中找到相关方法',
+      '推荐先看《三段式踩点法》与《转场之外》两条教程',
+      '可进入「图文索引」按创作阶段逐类检索',
+      '已为你匹配创作者名录，可在创作者板块继续浏览'
+    ];
+    var pick = tips[q.length % tips.length];
+    searchFeedback.textContent = '关于「' + q + '」：' + pick;
+    searchFeedback.classList.add('hdj-active');
+    toast('已提交搜索：' + q);
+  }
+  searchBtn.addEventListener('click', doSearch);
+  searchInput.addEventListener('keydown', function(e){
+    if(e.key === 'Enter'){ e.preventDefault(); doSearch(); }
+  });
+
+  /* 点赞 / 收藏 / 复制 */
+  document.addEventListener('click', function(e){
+    var likeBtn = e.target.closest('[data-hdj-like]');
+    if(likeBtn){
+      var base = parseInt(likeBtn.getAttribute('data-hdj-like'), 10) || 0;
+      var liked = likeBtn.classList.toggle('hdj-liked');
+      var num = liked ? base + 1 : base;
+      likeBtn.textContent = liked ? '❤ ' + (num >= 10000 ? (num/10000).toFixed(1).replace(/\.0$/,'') + '万' : num) : '❤ 点赞';
+      if(!likeBtn.hasAttribute('data-hdj-base-text')){ likeBtn.setAttribute('data-hdj-base-text', '1'); }
+      toast(liked ? '已点赞' : '已取消点赞');
+      return;
+    }
+    var favBtn = e.target.closest('[data-hdj-fav]');
+    if(favBtn){
+      var on = favBtn.classList.toggle('hdj-fav');
+      favBtn.textContent = on ? '★ 已收藏' : '☆ 收藏';
+      toast(on ? '已加入收藏夹' : '已取消收藏');
+      return;
+    }
+    var copyBtn = e.target.closest('[data-hdj-copy]');
+    if(copyBtn){
+      var link = 'https://hunjiandouyin.example/video/featured';
+      function done(){ copyBtn.classList.add('hdj-copied'); toast('链接已复制，可分享给朋友'); }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(link).then(done).catch(function(){ toast('复制失败，请手动选择链接'); });
+      } else {
+        done();
+      }
+      return;
+    }
+  });
+
+  /* 弹窗 */
+  var mask = document.getElementById('hdjModalMask');
+  var modalTitle = document.getElementById('hdjModalTitle');
+  var modalBody = document.getElementById('hdjModalBody');
+  var modalClose = document.getElementById('hdjModalClose');
+
+  function openModal(html, title){
+    modalTitle.textContent = title;
+    modalBody.innerHTML = html;
+    mask.classList.add('hdj-open');
+  }
+  function closeModal(){ mask.classList.remove('hdj-open'); }
+  modalClose.addEventListener('click', closeModal);
+  mask.addEventListener('click', function(e){ if(e.target === mask){ closeModal(); } });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeModal(); } });
+
+  var modalTemplates = {
+    submit: {
+      title: '投稿入口',
+      html: '<p>填写作品信息后，编辑组将在 48 小时内完成初审。请确保素材授权清晰。</p>' +
+            '<input type="text" placeholder="作品标题">' +
+            '<input type="text" placeholder="作品链接或素材说明">' +
+            '<textarea placeholder="简单介绍一下你的创作思路与使用素材"></textarea>' +
+            '<button class="hdj-btn hdj-btn-primary" type="button" data-hdj-submit-confirm>提交审核</button>'
+    },
+    share: {
+      title: '分享这支作品',
+      html: '<p>选择分享方式，或复制作品链接发送给朋友。</p>' +
+            '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px;">' +
+            '<button class="hdj-btn hdj-btn-ghost" type="button" data-hdj-share-tip="微信">微信</button>' +
+            '<button class="hdj-btn hdj-btn-ghost" type="button" data-hdj-share-tip="微博">微博</button>' +
+            '<button class="hdj-btn hdj-btn-ghost" type="button" data-hdj-share-tip="QQ">QQ</button>' +
+            '</div><button class="hdj-btn hdj-btn-primary" type="button" data-hdj-copy>复制作品链接</button>'
+    },
+    feedback: {
+      title: '意见反馈',
+      html: '<p>无论是功能建议还是内容反馈，我们都会认真阅读。</p>' +
+            '<textarea placeholder="请描述你遇到的问题或建议"></textarea>' +
+            '<input type="text" placeholder="联系方式（选填）">' +
+            '<button class="hdj-btn hdj-btn-primary" type="button" data-hdj-feedback-confirm>提交反馈</button>'
+    }
+  };
+
+  document.addEventListener('click', function(e){
+    var opener = e.target.closest('[data-hdj-open]');
+    if(opener){
+      var key = opener.getAttribute('data-hdj-open');
+      if(modalTemplates[key]){ openModal(modalTemplates[key].html, modalTemplates[key].title); }
+      return;
+    }
+    var authorBtn = e.target.closest('[data-hdj-author]');
+    if(authorBtn){
+      var parts = authorBtn.getAttribute('data-hdj-author').split('|');
+      openModal('<p><b style="color:#fff;">' + parts[1] + '</b> · 认证创作者</p><p>' + parts[2] + '</p><p>作品与创作方法均可在作者主页查看，欢迎在评论区与其交流。</p>', parts[0] + ' 作者档案');
+      return;
+    }
+  });
+
+  modalBody.addEventListener('click', function(e){
+    if(e.target.closest('[data-hdj-submit-confirm]')){
+      closeModal(); toast('投稿已提交，编辑组将在 48 小时内反馈');
+    }
+    if(e.target.closest('[data-hdj-feedback-confirm]')){
+      closeModal(); toast('感谢反馈，我们已收到');
+    }
+    var shareTip = e.target.closest('[data-hdj-share-tip]');
+    if(shareTip){
+      toast('已生成' + shareTip.getAttribute('data-hdj-share-tip') + '分享卡片');
+    }
+  });
+
+  /* 回到顶部 */
+  var topBtn = document.getElementById('hdjTopBtn');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 460){ topBtn.classList.add('hdj-show'); }
+    else { topBtn.classList.remove('hdj-show'); }
+  }, { passive:true });
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({ top:0, behavior:'smooth' });
+  });
+})();
+</script>
+</body>
+  </html>
